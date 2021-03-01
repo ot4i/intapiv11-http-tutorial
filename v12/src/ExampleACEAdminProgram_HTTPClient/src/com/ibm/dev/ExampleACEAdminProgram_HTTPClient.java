@@ -10,13 +10,13 @@ import com.ibm.integration.admin.http.HttpResponse;
 import com.ibm.integration.admin.model.IntegrationServerModel;
 import com.ibm.integration.admin.proxy.IntegrationAdminException;
 
-public class ExampleACEV11AdminProgram_HTTPClient {
+public class ExampleACEAdminProgram_HTTPClient {
 
 	public static void main(String[] args) {
 		
 		try {
 			log("==========================================================================================");
-			log("This v11 admin program shows the use of com.ibm.integration.admin.http classes (STRATEGIC)");
+			log("This admin program shows the use of com.ibm.integration.admin.http classes (STRATEGIC)");
 			log("==========================================================================================");
 			
 			String nodeName = "TESTNODE";
