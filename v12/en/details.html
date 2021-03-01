@@ -33,7 +33,7 @@
 		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
 	</head>
 <!-- header::End -->
-<!-- body::Start -->
+<!-- body::StartA -->
 		<body>
     <!-- body content here -->
   <div class="row">
@@ -43,7 +43,7 @@
   </div>
   <div class="row">
     <div class="small-9 medium-9 large-9 columns">
-      <h4>Using the Java IBM Integration API - ACEv11 HTTP classes</h4>
+      <h4>Using the Java IBM Integration API - ACE HTTP classes</h4>
     </div>
     <div class="small-3 medium-3 large-3 columns"> 
       <!--a href="javascript:;" onclick="openHelpSystem('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm');" class="small right helplink">IBM Knowledge Center</a-->
@@ -52,7 +52,7 @@
   <hr>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns">
-      <h5> Learn how to use the ACEv11 Java IBM Integration API&#39;s strategic com.ibm.integration.admin.http.* classes (requires v11.0.0.5 or higher) </h5>
+      <h5> Learn how to use the ACE Java IBM Integration API&#39;s strategic com.ibm.integration.admin.http.* classes </h5>
     </div>
   </div>
   <div class="row content-details">
@@ -63,11 +63,9 @@
       <div class="row">
       
         
-        <p> This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the ACE runtime itself). The application uses the ACEv11 Java Integration API&#39;s com.ibm.integration.admin.http.* classes. These classes are strategic for the ACEv11 product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the ACE runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the ACE administrative REST API) to describe a particular resource in the ACE runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. Whilst this tutorial focuses on the com.ibm.integration.admin.http package, another tutorial is provided which concentrates on com.ibm.integration.admin.proxy. </p>
+        <p> This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the ACE runtime itself). The application uses the ACE Java Integration API&#39;s com.ibm.integration.admin.http.* classes. These classes are strategic for the ACE product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the ACE runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the ACE administrative REST API) to describe a particular resource in the ACE runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. This tutorial focuses on the com.ibm.integration.admin.http package. </p>
       
-        <p> The tutorial requires an ACE integration node owned server, and provides an example application which can be deployed to the server. </p>
-      
-        <p> In IBM App Connect Enterprise, an application is a container for all the resources that are required to create a solution.  The Java application can then be run to report information about the deployed application. </p>
+        <p> The tutorial requires an ACE integration node owned server. </p>
       
       </div>	  
 		<!-- help links do not work in details page for GA 
@@ -114,7 +112,7 @@
           <ul>
             
             
-              <li>ACEv11 Java IBM Integration API</li>
+              <li>ACE Java IBM Integration API</li>
             
           </ul>
         </div>
