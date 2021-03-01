@@ -32,8 +32,8 @@
 	{
         "_common": 
 		{
-            "name": "Using the Java IBM Integration API - ACEv11 HTTP classes",
-            "shortDescription": "Learn how to use the ACEv11 Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes (requires v11.0.0.5 or higher)",
+            "name": "Using the Java IBM Integration API - ACE HTTP classes",
+            "shortDescription": "Learn how to use the ACE Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes",
 			"durationText": "This tutorial takes approximately",
             "durationTime": "10 minutes",
             "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
@@ -51,7 +51,7 @@
             "topicList": 
 			[
                 {
-                    "title": "ACEv11 Java IBM Integration API"
+                    "title": "ACE Java IBM Integration API"
                 }
             ],
             "outcomesName": "Learning outcomes",
@@ -69,13 +69,10 @@
                 "sections": 
 				[
                     {
-                        "section": "This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the ACE runtime itself). The application uses the ACEv11 Java Integration API's com.ibm.integration.admin.http.* classes. These classes are strategic for the ACEv11 product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the ACE runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the ACE administrative REST API) to describe a particular resource in the ACE runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. Whilst this tutorial focuses on the com.ibm.integration.admin.http package, another tutorial is provided which concentrates on com.ibm.integration.admin.proxy."
+                        "section": "This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the ACE runtime itself). The application uses the ACE Java Integration API's com.ibm.integration.admin.http.* classes. These classes are strategic for the ACE product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the ACE runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the ACE administrative REST API) to describe a particular resource in the ACE runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. This tutorial focuses on the com.ibm.integration.admin.http package."
 					},
 					{
-                        "section": "The tutorial requires an ACE integration node owned server, and provides an example application which can be deployed to the server."
-                    },
-                    {
-                        "section": "In IBM App Connect Enterprise, an application is a container for all the resources that are required to create a solution.  The Java application can then be run to report information about the deployed application."
+                        "section": "The tutorial requires an ACE integration node owned server."
                     }
                 ]
             },
@@ -159,21 +156,21 @@
                       				"details":"Create an integration node by starting an App Connect Enterprise command console and executing the following commands:<br><code><span class='cmdname'>mqsicreatebroker TESTNODE</span></code><br><code><span class='cmdname'>mqsistart TESTNODE</span></code><br><code><span class='cmdname'>mqsicreateexecutiongroup TESTNODE -e default</span></code>"
                     			},												
 								{
-                      				"details":"Inspect the provided java application. Switch to the Java perspective and then open <span class='application'>ExampleACEV11AdminProgram_HTTPClient.java</span> which you will find inside the Java project named <span class='application'>ExampleACEV11AdminProgram_HTTPClient</span>. If required by your runtime environment, update the value of the variable, <span class='resource'>nodeName</span>. By default this is set to the value <span class='resource'>TESTNODE</span> to match to the naming convention used in the instructions above. Also, note the parameter which is passed to <span class='application'>getMethod</span> in the code <code>getMethod(\"\/apiv2\/servers\/default?depth=4\")</code>. This includes the value <span class='application'>default</span> to also match the name of the Integration Server used in the instructions above. Have a look through the rest of the Java. You will see that once the initial response has been returned, the IntegrationServerModel class is used to parse the reply and make various properties of the integration server easily accessible by the code."									
+                      				"details":"Inspect the provided java application. Switch to the Java perspective and then open <span class='application'>ExampleACEAdminProgram_HTTPClient.java</span> which you will find inside the Java project named <span class='application'>ExampleACEAdminProgram_HTTPClient</span>. If required by your runtime environment, update the value of the variable, <span class='resource'>nodeName</span>. By default this is set to the value <span class='resource'>TESTNODE</span> to match to the naming convention used in the instructions above. Also, note the parameter which is passed to <span class='application'>getMethod</span> in the code <code>getMethod(\"\/apiv2\/servers\/default?depth=4\")</code>. This includes the value <span class='application'>default</span> to also match the name of the Integration Server used in the instructions above. Have a look through the rest of the Java. You will see that once the initial response has been returned, the IntegrationServerModel class is used to parse the reply and make various properties of the integration server easily accessible by the code."									
 								},
 								{
-									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEV11AdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\11.0.0.5</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at ACEv11.0.0.5 the required libraries are as follows:",									
+									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEV11AdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\12.0.1.0</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at ACEv12.0.1.0 the required libraries are as follows:",									
 									"substeps":{
                                  "type":"unordered",
                                  "details":[
                                     {
-                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\11.0.0.5\\common\\classes</code>: IntegrationAPI.jar"
+                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\12.0.1.0\\common\\classes</code>: IntegrationAPI.jar"
 									},
                                     {
-                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\11.0.0.5\\common\\jackson\\lib</code>: jackson-annotations-2.9.8.jar, jackson-core-2.9.8.jar, jackson-databind-2.9.8.jar, jackson-dataformat-yaml-2.9.8.jar, snakeyaml-1.23.jar"
+                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\12.0.1.0\\common\\jackson\\lib</code>: jackson-annotations-2.11.4.jar, jackson-core-2.11.4.jar, jackson-databind-2.11.4.jar, jackson-dataformat-yaml-2.11.4.jar, snakeyaml-1.27.jar"
                                     },
                                     {
-                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\11.0.0.5\\common\\jnr\\lib</code>: asm-7.0.jar, jffi-1.2.19.jar, jffi-1.2.19-native.jar, jnr-a64asm-1.0.0.jar, jnr-constants-0.9.12.jar, jnr-enxio-0.21.jar, jnr-ffi-2.1.10.jar, jnr-posix-3.0.50.jar, jnr-unixsocket-0.23.jar, jnr-x86asm-1.0.2.jar"
+                                       "details":"From <code>C:\\Program Files\\IBM\\ACE\\12.0.1.0\\common\\jnr\\lib</code>: asm-7.0.jar, jffi-1.2.19.jar, jffi-1.2.19-native.jar, jnr-a64asm-1.0.0.jar, jnr-constants-0.9.12.jar, jnr-enxio-0.21.jar, jnr-ffi-2.1.10.jar, jnr-posix-3.0.50.jar, jnr-unixsocket-0.23.jar, jnr-x86asm-1.0.2.jar"
                                     }
                                  ]
                               }
@@ -204,16 +201,16 @@
                                     "type": "ordered",
                                     "details": [                                      
                                     {
-                                        "details": "Open <span class='resource'>ExampleACEV11AdminProgram_HTTPClient.java</span> which is located inside project <span class='resource'>ExampleACEV11AdminProgram_HTTPClient</span>.",										
+                                        "details": "Open <span class='resource'>ExampleACEAdminProgram_HTTPClient.java</span> which is located inside project <span class='resource'>ExampleACEAdminProgram_HTTPClient</span>.",										
                                         "substeps":{
                                         "type": "unordered",
                                         "details": 
 								        [
                                         {
-                                        	"details": "Right-click <span class='resource'>ExampleACEV11AdminProgram_HTTPClient.java</span> and select <span class='resource'>Run As > Java application</span>."
+                                        	"details": "Right-click <span class='resource'>ExampleACEAdminProgram_HTTPClient.java</span> and select <span class='resource'>Run As > Java application</span>."
                                         },
 										{
-                                        	"details": "The Console view should open at the base of the screen and as the Java application runs, you should see logging like this:<br><code>(12/08/19 15:45:23) ==========================================================================================</code><br><code>(12/08/19 15:45:23) This v11 admin program shows the use of com.ibm.integration.admin.http classes (STRATEGIC)</code><br><code>(12/08/19 15:45:23) ==========================================================================================</code><br><code>(12/08/19 15:45:23) Connecting locally to the integration node named TESTNODE</code><br><code>(12/08/19 15:45:23) URL: /apiv2/servers/default?depth=4</code><br><code>(12/08/19 15:45:23) StatusCode: 200</code><br><code>(12/08/19 15:45:23) ReasonCode: OK</code><br><code>(12/08/19 15:45:23) BuildLevel: ib000-L190627.16880 (S000-L190627.15920)</code><br><code>(12/08/19 15:45:23) PlatformArchitecture: AMD64</code><br><code>(12/08/19 15:45:23) PlatformName: Windows 10 Enterprise</code><br><code>(12/08/19 15:45:23) PlatformVersion: 6.3 build 17763</code><br><code>(12/08/19 15:45:23) ProductName: IBM App Connect Enterprise</code><br><code>(12/08/19 15:45:23) ProductVersion: 11.0.0.5</code>"											
+                                        	"details": "The Console view should open at the base of the screen and as the Java application runs, you should see logging like this:<br><code>(12/08/19 15:45:23) ==========================================================================================</code><br><code>(12/08/19 15:45:23) This admin program shows the use of com.ibm.integration.admin.http classes (STRATEGIC)</code><br><code>(12/08/19 15:45:23) ==========================================================================================</code><br><code>(12/08/19 15:45:23) Connecting locally to the integration node named TESTNODE</code><br><code>(12/08/19 15:45:23) URL: /apiv2/servers/default?depth=4</code><br><code>(12/08/19 15:45:23) StatusCode: 200</code><br><code>(12/08/19 15:45:23) ReasonCode: OK</code><br><code>(12/08/19 15:45:23) BuildLevel: ib000-L190627.16880 (S000-L190627.15920)</code><br><code>(12/08/19 15:45:23) PlatformArchitecture: AMD64</code><br><code>(12/08/19 15:45:23) PlatformName: Windows 10 Enterprise</code><br><code>(12/08/19 15:45:23) PlatformVersion: 6.3 build 17763</code><br><code>(12/08/19 15:45:23) ProductName: IBM App Connect Enterprise</code><br><code>(12/08/19 15:45:23) ProductVersion: 11.0.0.5</code>"											
 										}										
                                         ]
                                         }
@@ -222,7 +219,7 @@
                             }
                         },
 			{
-			    "section": "This tutorial has shown how to use the ACEv11 Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes to show details about an integration server."
+			    "section": "This tutorial has shown how to use the ACE Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes to show details about an integration server."
 			}
                     ]
                 },
