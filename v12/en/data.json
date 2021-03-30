@@ -103,7 +103,7 @@
                     "sections": 
 					[
                         {
-                            "section": "When you click Import, one project will be created in your workspace: A Java project name <span class='application'>ExampleACEV11AdminProgram_HTTPClient</span>."
+                            "section": "When you click Import, one project will be created in your workspace: A Java project name <span class='application'>ExampleACEAdminProgram_HTTPClient</span>."
                         },
                         {
                             "section": "This tutorial does not provide any other example applications or message flows for deployment. The java example simply connects to an integration server and reports its properties, so no other assets are needed for this trivial example."
@@ -159,7 +159,7 @@
                       				"details":"Inspect the provided java application. Switch to the Java perspective and then open <span class='application'>ExampleACEAdminProgram_HTTPClient.java</span> which you will find inside the Java project named <span class='application'>ExampleACEAdminProgram_HTTPClient</span>. If required by your runtime environment, update the value of the variable, <span class='resource'>nodeName</span>. By default this is set to the value <span class='resource'>TESTNODE</span> to match to the naming convention used in the instructions above. Also, note the parameter which is passed to <span class='application'>getMethod</span> in the code <code>getMethod(\"\/apiv2\/servers\/default?depth=4\")</code>. This includes the value <span class='application'>default</span> to also match the name of the Integration Server used in the instructions above. Have a look through the rest of the Java. You will see that once the initial response has been returned, the IntegrationServerModel class is used to parse the reply and make various properties of the integration server easily accessible by the code."									
 								},
 								{
-									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEV11AdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\12.0.1.0</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at ACEv12.0.1.0 the required libraries are as follows:",									
+									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEAdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\12.0.1.0</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at ACEv12.0.1.0 the required libraries are as follows:",									
 									"substeps":{
                                  "type":"unordered",
                                  "details":[
@@ -219,7 +219,7 @@
                             }
                         },
 			{
-			    "section": "This tutorial has shown how to use the ACE Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes to show details about an integration server."
+			    "section": "This tutorial has shown how to use the Java IBM Integration API's strategic com.ibm.integration.admin.http.* classes to show details about an integration server."
 			}
                     ]
                 },
