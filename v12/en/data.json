@@ -51,7 +51,7 @@
             "topicList": 
 			[
                 {
-                    "title": "ACE Java IBM Integration API"
+                    "title": "Java IBM Integration API"
                 }
             ],
             "outcomesName": "Learning outcomes",
@@ -65,14 +65,14 @@
             "summary": 
 			{
                 "overviewName": "OVERVIEW",
-                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+                "_overviewComment": "A short description of what happens in this tutorial, and an optional short explanation of the concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
                 "sections": 
 				[
                     {
-                        "section": "This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the ACE runtime itself). The application uses the ACE Java Integration API's com.ibm.integration.admin.http.* classes. These classes are strategic for the ACE product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the ACE runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the ACE administrative REST API) to describe a particular resource in the ACE runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. This tutorial focuses on the com.ibm.integration.admin.http package."
+                        "section": "This tutorial demonstrates a simple java application executing stand-alone (in a JVM but outside of the IBM App Connect Enterprise runtime itself). The application uses the Java Integration API's com.ibm.integration.admin.http.* classes. These classes are strategic for the product. Users may find them more generalized than the classes provided in the package com.ibm.integration.admin.proxy The proxy package provides proxy objects for each item in the runtime hierarchy i.e. integration server proxy, application proxy, message flow proxy etc. The http package is structured to expect from the developer a URL (matching the administrative REST API) to describe a particular resource in the runtime hierarchy. Which of these approaches you prefer may vary from developer to developer. For existing IBM Integration Bus users, the proxy package approach may be most familiar. To entirely new users the http package approach may be most easily understood. It is also possible to use classes from both packages within the same program, because the com.ibm.integration.admin.model.* classes can be used to help developers parse responses to requests in both styles. This tutorial focuses on the com.ibm.integration.admin.http package."
 					},
 					{
-                        "section": "The tutorial requires an ACE integration node owned server."
+                        "section": "The tutorial requires an integration node owned server."
                     }
                 ]
             },
@@ -159,7 +159,7 @@
                       				"details":"Inspect the provided java application. Switch to the Java perspective and then open <span class='application'>ExampleACEAdminProgram_HTTPClient.java</span> which you will find inside the Java project named <span class='application'>ExampleACEAdminProgram_HTTPClient</span>. If required by your runtime environment, update the value of the variable, <span class='resource'>nodeName</span>. By default this is set to the value <span class='resource'>TESTNODE</span> to match to the naming convention used in the instructions above. Also, note the parameter which is passed to <span class='application'>getMethod</span> in the code <code>getMethod(\"\/apiv2\/servers\/default?depth=4\")</code>. This includes the value <span class='application'>default</span> to also match the name of the Integration Server used in the instructions above. Have a look through the rest of the Java. You will see that once the initial response has been returned, the IntegrationServerModel class is used to parse the reply and make various properties of the integration server easily accessible by the code."									
 								},
 								{
-									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEAdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\12.0.1.0</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at ACEv12.0.1.0 the required libraries are as follows:",									
+									"details":"Check the Java Build Path for the provided java application. Right-click the project <span class='application'>ExampleACEAdminProgram_HTTPClient</span>, select <span class='application'>Properties</span> and choose the Java Build Path. You will see that the project has been configured to expect several jar files to be available from the default installation location on Windows at <span class='resource'>C:\\Program Files\\IBM\\ACE\\12.0.1.0</span>. If you are using a different platform or install location you will need to use the <span class='resource'>Remove</span> and <span class='resource'>Add External JARs</span> buttons to satisfy the required dependencies. The precise versions of these files may change in future, but at IBM App Connect Enterprise 12.0.1.0 the required libraries are as follows:",									
 									"substeps":{
                                  "type":"unordered",
                                  "details":[
